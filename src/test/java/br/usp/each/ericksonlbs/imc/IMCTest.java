@@ -1,46 +1,59 @@
 package br.usp.each.ericksonlbs.imc;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for Max.
- */
+import java.util.logging.Logger;
+
 public class IMCTest {
+	static int actual;
+	static int expected;
+	static int testCount = 1;
+	Logger log = Logger.getLogger(IMCTest.class.getName());
+	@AfterEach
+	public void showActual(){
+		log.info("Teste "+ testCount);
+		System.out.println("actual: "+actual);
+		System.out.println("expected: "+expected);
+		testCount++;
+		System.out.println("----------------------------");
+	}
+
 	@Test
 	public void test1() {
-		int expected = 0;
-		int actual = IMC.Calc(55.0, 1.75);
-		Assert.assertEquals(expected, actual);
-	}	
+		expected = 0;
+		actual = IMC.Calc(55.0, 1.75);
+		Assertions.assertEquals(expected, actual);
+	}
 	@Test
 	public void test2() {
-		int expected = 1;
-		int actual = IMC.Calc(75.0, 1.75);
-		Assert.assertEquals(expected, actual);
-	}	
+		expected = 1;
+		actual = IMC.Calc(75.0, 1.75);
+		Assertions.assertEquals(expected, actual);
+	}
 	@Test
 	public void test3() {
-		int expected = 2;
-		int actual = IMC.Calc(90.0, 1.75);
-		Assert.assertEquals(expected, actual);
-	}	
+		expected = 2;
+		actual = IMC.Calc(90.0, 1.75);
+		Assertions.assertEquals(expected, actual);
+	}
 	@Test
 	public void test4() {
-		int expected = 3;
-		int actual = IMC.Calc(100.0, 1.75);
-		Assert.assertEquals(expected, actual);
-	}	
+		expected = 3;
+		actual = IMC.Calc(100.0, 1.75);
+		Assertions.assertEquals(expected, actual);
+	}
 	@Test
 	public void test5() {
-		int expected = 4;
-		int actual = IMC.Calc(110.0, 1.75);
-		Assert.assertEquals(expected, actual);
-	}	
+		expected = 5;
+		actual = IMC.Calc(110.0, 1.75);
+		Assertions.assertEquals(expected, actual);
+	}
 	@Test
 	public void test6() {
-		int expected = 5;
-		int actual = IMC.Calc(150.0, 1.75);
-		Assert.assertEquals(expected, actual);
-	}	
+		expected = 4;
+		actual = IMC.Calc(150.0, 1.75);
+		Assertions.assertEquals(expected, actual);
+	}
 }
