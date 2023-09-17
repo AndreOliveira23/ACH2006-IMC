@@ -46,7 +46,7 @@ public class IMCTest {
 	}
 	@Test
 	public void test5() {
-		expected = 4;
+		expected = 5;
 		actual = IMC.Calc(110.0, 1.75);
 		Assertions.assertEquals(expected, actual);
 	}
